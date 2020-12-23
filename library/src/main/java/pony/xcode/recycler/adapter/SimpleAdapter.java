@@ -21,17 +21,17 @@ public abstract class SimpleAdapter<T> extends BaseAdapter<T, SimpleViewHolder> 
     }
 
     @LayoutRes
-    protected abstract int getItemLayoutId();
+    protected abstract int getItemLayoutId(int viewType);
 
     @NonNull
     @Override
     public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SimpleViewHolder(mLayoutInflater.inflate(getItemLayoutId(), parent, false));
+        return new SimpleViewHolder(mLayoutInflater.inflate(getItemLayoutId(viewType), parent, false));
     }
 
     @Override
     SimpleViewHolder getViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SimpleViewHolder(mLayoutInflater.inflate(getItemLayoutId(), parent, false));
+        return new SimpleViewHolder(mLayoutInflater.inflate(getItemLayoutId(viewType), parent, false));
     }
 
     @Override

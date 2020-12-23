@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected int getItemLayoutId() {
+        protected int getItemLayoutId(int viewType) {
             return R.layout.item_simple;
         }
 
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected int getItemLayoutId() {
+        protected int getItemLayoutId(int viewType) {
             return R.layout.item_binding;
         }
 

@@ -23,11 +23,11 @@ public abstract class SimpleBindingAdapter<T, DB extends ViewDataBinding> extend
     }
 
     @LayoutRes
-    protected abstract int getItemLayoutId();
+    protected abstract int getItemLayoutId(int viewType);
 
     @Override
     BindingViewHolder<DB> getViewHolder(@NonNull ViewGroup parent, int viewType) {
-        DB binding = DataBindingUtil.inflate(mLayoutInflater, getItemLayoutId(), parent, false);
+        DB binding = DataBindingUtil.inflate(mLayoutInflater, getItemLayoutId(viewType), parent, false);
         return new BindingViewHolder<>(binding);
     }
 
